@@ -1,0 +1,47 @@
+extends layout
+
+block content
+	nav.navbar.navbar-default(role='navigation' ng-controller='navCtr')
+		.container-fluid
+			.navbar-header
+				button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar-collapse')
+					span.sr-only Toggle navigation
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+				a.navbar-brand(href='#') Brand
+			#navbar-collapse.collapse.navbar-collapse
+				ul.nav.navbar-nav
+					li.active
+						a(href='#abuot') Link
+					li
+						a(href='#') Link
+					
+				form.navbar-form.navbar-right(role='search')
+					.form-group
+						input.form-control(type='text', placeholder='Search')
+					button.btn.btn-default(type='submit') Submit
+				ul.nav.navbar-nav.navbar-right
+					li
+						a(ui-sref='about') about
+					li
+						a(ui-sref='hello') hello
+					li
+						a(ui-sref='user') 用户中心
+					li 
+						a(href='javascript;' ng-click='login()') 登录
+					li 
+						a(href='javascript;' ng-click='reg()') 注册 
+
+	ui-view
+
+	script(src='/javascripts/jquery-1.11.3.min.js')
+	script(src='/javascripts/bootstrap.min.js')
+	script(src='/javascripts/angular.js')
+	script(src='/javascripts/angular-ui-router.js')
+	script(src='/js/app.js')
+	script(src='/js/controllers.js')
+	script(src='/js/services.js')
+	script(src='/js/directives.js')
+
+
